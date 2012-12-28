@@ -69,7 +69,10 @@
             bindEvents: function () {
                 for (var i = tabs.length - 1; i >= 0; i--) {
                     tabs[i].addEventListener("click", function(e){
-                        togglePage($('#' + e.srcElement.getAttribute('aria-controls'))[0]);
+                        var srcElement = e.target || e.srcElement;
+
+                        togglePage($('#' + srcElement.getAttribute('aria-controls'))[0]);
+                        e.preventDefault();
                         e.returnValue = false;
                     });
                 }
