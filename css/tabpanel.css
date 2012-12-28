@@ -68,7 +68,7 @@ body {
 
 .page {
     position: absolute;
-    bottom: 0;
+    top: 0;
     opacity: 0;
     padding: 1em;
     -webkit-transition: opacity 0.25s;
