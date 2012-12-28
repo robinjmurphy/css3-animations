@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Sliding Tab Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/tabpanel.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="masthead">
+            <ul role="tablist">
+                <li><a href="#" id="tab-1" aria-controls="page-1" role="tab">Page 1</a></li>
+                <li><a href="#" id="tab-2" aria-controls="page-2" role="tab">Page 2</a></li>
+                <li><a href="#" id="tab-3" aria-controls="page-3" role="tab">Page 3</a></li>
+            </ul>
+        </nav>
+        <div class="dropdown">
+            <div class="page" id="page-1" aria-labelledby="tab-1" aria-hidden="true" role="tabpanel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean risus augue, mattis iaculis adipiscing at, convallis vel sapien. Etiam accumsan laoreet ullamcorper. Vestibulum posuere adipiscing arcu in rutrum. Mauris venenatis augue vel quam pretium viverra. Integer vitae venenatis diam. Fusce pulvinar vestibulum cursus. Cras ullamcorper viverra magna sed varius.</p>
+            </div>
+            <div class="page" id="page-2" aria-labelledby="tab-2" aria-hidden="true" role="tabpanel">
+                <p>In hac habitasse platea dictumst. Suspendisse aliquam iaculis risus. Aenean non nibh est. Mauris tempus lobortis neque sit amet rhoncus. In nunc ligula, eleifend mattis sagittis at, sollicitudin sit amet nunc. Sed nulla est, iaculis at fermentum ac, dapibus vel mauris. Sed scelerisque cursus neque, ut dignissim arcu lacinia a. Quisque ac enim id leo mollis luctus. Suspendisse fringilla tincidunt nisi, non tristique elit tristique quis. Morbi et augue ligula, eu tempus quam. Etiam pellentesque dapibus facilisis. Sed egestas lectus consequat metus malesuada blandit. Phasellus augue velit, suscipit vitae lobortis vitae, aliquam eu diam. Ut et neque tortor. Aenean hendrerit, lectus a accumsan dapibus, nisl eros mollis erat, et eleifend turpis turpis at magna. Ut lorem ligula, porttitor eu adipiscing id, tincidunt nec urna.</p>
+            </div>
+            <div class="page" id="page-3" aria-labelledby="tab-3" aria-hidden="true" role="tabpanel">
+                <p>Vestibulum vel mi odio. Curabitur sagittis molestie eros sit amet blandit. Integer ultricies nunc sit amet mauris ornare consectetur. Sed molestie elit leo. Proin cursus lorem lobortis enim mattis a pretium lacus egestas. Donec eleifend sodales risus, et rutrum massa mollis sed. Aliquam nec ipsum massa. Pellentesque id risus purus. Sed magna orci, luctus et vehicula suscipit, eleifend et velit.</p>
+                <p>Aenean id lorem quis eros lobortis ultricies. Suspendisse porta dolor quis nunc commodo a ullamcorper ipsum egestas. Integer placerat egestas commodo. Aliquam in ante vel magna scelerisque feugiat vel a odio. Morbi eget odio in ante hendrerit facilisis ut auctor purus. Nullam fermentum ullamcorper eros, vitae pellentesque neque varius ut. Fusce malesuada pharetra mollis. Sed ut dui est, ac faucibus enim. Aliquam erat volutpat. Morbi in blandit ligula. Phasellus bibendum scelerisque dui, a tincidunt augue malesuada non. Quisque tincidunt libero ultrices nunc accumsan sit amet fringilla eros elementum. Morbi vel eros elit. In elementum venenatis arcu, at gravida dolor rhoncus a. Vestibulum ac lorem massa, eget egestas dolor. Suspendisse ipsum metus, tincidunt in euismod id, suscipit id lectus.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/sizzle.js"></script>
+    <script src="js/tabpanel.js"></script>
+</body>
+</html>

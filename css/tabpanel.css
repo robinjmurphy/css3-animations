@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-family: sans-serif;
+    background: #e4e4e4;
+    color: #333;
+}
+
+.wrapper {
+    background-color: rgba(0,0,0,.4);
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.masthead {
+    -webkit-transition: background-color .25s;
+    -moz-transition: background-color .25s;
+    -o-transition: background-color .25s;
+    transition: background-color .25s;
+}
+
+.masthead.open {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.masthead ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.masthead li {
+    float: left;
+    border-right: 1px solid rgba(0,0,0,.2);
+}
+
+.masthead a {
+    display: block;
+    padding: .6em 1.2em;
+    color: #fff;
+    border-bottom: 4px solid transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.masthead.open a {
+    color: #444;
+}
+
+.masthead a:focus,
+.masthead a:hover,
+.masthead a:active {
+    border-bottom-color: #444;
+}
+
+.dropdown {
+    height: 0;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+.page {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    padding: 1em;
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+}
+
+.page.active {
+    opacity: 1;
+}
