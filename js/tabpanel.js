@@ -25,18 +25,21 @@
         function openPage (page) {
             closeAllPages();
             page.className = 'page active';
+            page.setAttribute('aria-hidden', 'false');
             toggleDropdown();
             setHeightOfDropdown(page.offsetHeight);
         }
 
         function closePage (page) {
             page.className = 'page';
+            page.setAttribute('aria-hidden', 'true');
             toggleDropdown();
         }
 
         function closeAllPages () {
             for (var i = pages.length - 1; i >= 0; i--) {
-                pages[i].className = 'page'
+                pages[i].className = 'page';
+                pages[i].setAttribute('aria-hidden', 'true');
             };
         }
 
