@@ -27,10 +27,6 @@ body {
     overflow: auto;
 }
 
-.masthead.open ul {
-    border-bottom: 1px solid rgba(0,0,0,.2);
-}
-
 .masthead li {
     float: left;
     border-right: 1px solid rgba(0,0,0,.2);
@@ -75,6 +71,7 @@ body {
     -moz-transition: opacity 0.25s;
     -o-transition: opacity 0.25s;
     transition: opacity 0.25s;
+    border-top: 1px solid rgba(0,0,0,.2)
 }
 
 .page.active {
