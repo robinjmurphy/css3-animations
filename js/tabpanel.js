@@ -22,18 +22,18 @@
             }
         }
 
+        function closePage (page) {
+            page.className = 'page';
+            page.setAttribute('aria-hidden', 'true');
+            toggleDropdown();
+        }
+
         function openPage (page) {
             closeAllPages();
             page.className = 'page active';
             page.setAttribute('aria-hidden', 'false');
             toggleDropdown();
             setHeightOfDropdown(page.offsetHeight);
-        }
-
-        function closePage (page) {
-            page.className = 'page';
-            page.setAttribute('aria-hidden', 'true');
-            toggleDropdown();
         }
 
         function closeAllPages () {
@@ -52,13 +52,13 @@
             }
         }
 
-        function openDropdown () {
-            masthead.className = 'masthead open';
-        }
-
         function closeDropdown () {
             masthead.className = 'masthead';
             dropdown.style.height = 0;
+        }
+
+        function openDropdown () {
+            masthead.className = 'masthead open';
         }
 
         function setHeightOfDropdown (pageHeight) {
