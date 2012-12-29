@@ -1,5 +1,5 @@
-(function($){
-    'use strict'
+(function ($, document, window) {
+    'use strict';
 
     var domReady,
         tabPanels;
@@ -11,7 +11,8 @@
         var dropdown = $('.dropdown')[0],
             tabs = $('.masthead a'),
             panels = $('.panel'),
-            masthead = $('.masthead')[0];
+            masthead = $('.masthead')[0],
+            activePanel;
 
         function togglePanel (panel) {
             if (panel.className.indexOf('active') > -1) {
@@ -25,6 +26,7 @@
         function closePanel (panel) {
             panel.className = 'panel';
             panel.setAttribute('aria-hidden', 'true');
+            activePanel = undefined;
             toggleDropdown();
         }
 
@@ -32,6 +34,7 @@
             closeAllPanels();
             panel.className = 'panel active';
             panel.setAttribute('aria-hidden', 'false');
+            activePanel = panel;
             toggleDropdown();
             setHeightOfDropdown(panel.offsetHeight);
         }
@@ -40,7 +43,8 @@
             for (var i = panels.length - 1; i >= 0; i--) {
                 panels[i].className = 'panel';
                 panels[i].setAttribute('aria-hidden', 'true');
-            };
+            }
+            activePanel = undefined;
         }
 
         function toggleDropdown () {
@@ -65,22 +69,38 @@
             dropdown.style.height = panelHeight + 'px';
         }
 
+        function handleTabClick (tab, e) {
+            togglePanel($('#' + tab.getAttribute('aria-controls'))[0]);
+            e.preventDefault();
+            e.returnValue = false;
+        }
+
+        function handleResize () {
+            setHeightOfDropdown(activePanel.offsetHeight);
+        }
+
+        function bindClickEvent (tab) {
+            tab.addEventListener("click", function (e) {
+                handleTabClick(this, e);
+            });
+        }
+
         return {
             bindEvents: function () {
                 for (var i = tabs.length - 1; i >= 0; i--) {
-                    tabs[i].addEventListener("click", function(e){
-                        var srcElement = e.target || e.srcElement;
-
-                        togglePanel($('#' + srcElement.getAttribute('aria-controls'))[0]);
-                        e.preventDefault();
-                        e.returnValue = false;
-                    });
+                    bindClickEvent(tabs[i]);
                 }
+                window.addEventListener('resize', function () {
+                    handleResize();
+                });
+                window.addEventListener('orientationchange', function () {
+                    handleResize();
+                });
             }
-        }
-    }
+        };
+    };
 
-    domReady(function(){
+    domReady(function () {
         tabPanels().bindEvents();
     });
-})(window.Sizzle);
+})(window.Sizzle, document, window);
