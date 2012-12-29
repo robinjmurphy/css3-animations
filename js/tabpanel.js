@@ -103,4 +103,5 @@
     domReady(function () {
         tabPanels().bindEvents();
     });
+    
 })(window.Sizzle, document, window);
