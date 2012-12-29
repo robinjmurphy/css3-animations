@@ -10,36 +10,36 @@
     tabPanels = function () {
         var dropdown = $('.dropdown')[0],
             tabs = $('.masthead a'),
-            pages = $('.page'),
+            panels = $('.panel'),
             masthead = $('.masthead')[0];
 
-        function togglePage (page) {
-            if (page.className.indexOf('active') > -1) {
-                closePage(page);
+        function togglePanel (panel) {
+            if (panel.className.indexOf('active') > -1) {
+                closePanel(panel);
             }
             else {
-                openPage(page);
+                openPanel(panel);
             }
         }
 
-        function closePage (page) {
-            page.className = 'page';
-            page.setAttribute('aria-hidden', 'true');
+        function closePanel (panel) {
+            panel.className = 'panel';
+            panel.setAttribute('aria-hidden', 'true');
             toggleDropdown();
         }
 
-        function openPage (page) {
-            closeAllPages();
-            page.className = 'page active';
-            page.setAttribute('aria-hidden', 'false');
+        function openPanel (panel) {
+            closeAllPanels();
+            panel.className = 'panel active';
+            panel.setAttribute('aria-hidden', 'false');
             toggleDropdown();
-            setHeightOfDropdown(page.offsetHeight);
+            setHeightOfDropdown(panel.offsetHeight);
         }
 
-        function closeAllPages () {
-            for (var i = pages.length - 1; i >= 0; i--) {
-                pages[i].className = 'page';
-                pages[i].setAttribute('aria-hidden', 'true');
+        function closeAllPanels () {
+            for (var i = panels.length - 1; i >= 0; i--) {
+                panels[i].className = 'panel';
+                panels[i].setAttribute('aria-hidden', 'true');
             };
         }
 
@@ -61,8 +61,8 @@
             masthead.className = 'masthead open';
         }
 
-        function setHeightOfDropdown (pageHeight) {
-            dropdown.style.height = pageHeight + 'px';
+        function setHeightOfDropdown (panelHeight) {
+            dropdown.style.height = panelHeight + 'px';
         }
 
         return {
@@ -71,7 +71,7 @@
                     tabs[i].addEventListener("click", function(e){
                         var srcElement = e.target || e.srcElement;
 
-                        togglePage($('#' + srcElement.getAttribute('aria-controls'))[0]);
+                        togglePanel($('#' + srcElement.getAttribute('aria-controls'))[0]);
                         e.preventDefault();
                         e.returnValue = false;
                     });

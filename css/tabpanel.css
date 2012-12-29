@@ -63,7 +63,7 @@ body {
     transition: height 0.5s;
 }
 
-.page {
+.panel {
     position: absolute;
     top: 0;
     opacity: 0;
@@ -75,6 +75,6 @@ body {
     border-top: 1px solid rgba(0,0,0,.2)
 }
 
-.page.active {
+.panel.active {
     opacity: 1;
 }
