@@ -76,7 +76,9 @@
         }
 
         function handleResize () {
-            setHeightOfDropdown(activePanel.offsetHeight);
+            if (activePanel) {
+                setHeightOfDropdown(activePanel.offsetHeight);
+            }
         }
 
         function bindClickEvent (tab) {
@@ -103,5 +105,5 @@
     domReady(function () {
         tabPanels().bindEvents();
     });
-    
+
 })(window.Sizzle, document, window);
