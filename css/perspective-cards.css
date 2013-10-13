@@ -1,0 +1,95 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    padding: 2em;
+    line-height: 1.5;
+    background: #eee;
+}
+
+.card-container {
+    margin: 2em auto 0 auto;
+    max-width: 42em;
+    -webkit-perspective: 10em;
+    -webkit-transition: all 0.5s;
+}
+
+.card-container:hover {
+    -webkit-perspective: 20em;
+}
+
+.card {
+    background: rgba(250, 250, 250, 0.95);
+    padding: 1em;
+    margin: 2em 0;
+    position: relative;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.15), -5px -5px 20px rgba(0, 0, 0, 0.075);
+    border-top: 2px solid #ddd;
+    -webkit-transition: all 0.25s;
+}
+
+.card:hover {
+    background: #fff;
+    cursor: pointer;
+    border-top-color: #999;
+}
+
+.card__headline {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 0.2em;
+    -webkit-transition: all 0.2s;
+}
+
+.card:hover .card__headline {
+    color: #444;
+}
+
+.card__ts {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 0.5em;
+}
+
+.card__circle {
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    border-radius: 15px;
+    -webkit-transition: all 0.2s;
+}
+
+.card:hover .card__circle {
+    background: #999;
+}
+
+.perspective .card {
+    position: absolute;
+}
+
+.perspective .card--1 {
+    top: 0;
+    -webkit-transform: translate3d(0, 0, -3em);
+}
+
+.perspective .card--2 {
+    top: 3em;
+    -webkit-transform: translate3d(0, 0, -2em);
+}
+
+.perspective .card--3 {
+    top: 6em;
+    -webkit-transform: translate3d(0, 0, -1em);
+}
+
+.perspective .card--4 {
+    top: 9em;
+}
+
+.perspective .card:hover {
+    margin-top: 0.5em;
+}
